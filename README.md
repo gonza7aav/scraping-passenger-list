@@ -2,7 +2,7 @@
 
 <div align='center'>
 
-![GitHub release](https://img.shields.io/github/v/release/gonza7aav/scraping-passenger-list?color=critical&label=database)
+![GitHub release](https://img.shields.io/github/v/release/gonza7aav/scraping-passenger-list?color=critical)
 ![GitHub repository size](https://img.shields.io/github/repo-size/gonza7aav/scraping-passenger-list?label=size&color=informational)
 ![Repository license](https://img.shields.io/github/license/gonza7aav/scraping-passenger-list?color=informational)
 
