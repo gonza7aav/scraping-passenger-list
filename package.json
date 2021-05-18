@@ -1,7 +1,7 @@
 {
   "name": "scraping-passenger-list",
   "version": "1.0.0",
-  "description": "",
+  "description": "A bundle of web scraping script that harvest information about ships, arrivals and passengers.",
   "homepage": "https://github.com/gonza7aav/scraping-passenger-list#readme",
   "bugs": {
     "url": "https://github.com/gonza7aav/scraping-passenger-list/issues"
@@ -23,7 +23,11 @@
     "type": "git",
     "url": "git+https://github.com/gonza7aav/scraping-passenger-list.git"
   },
-  "keywords": [],
+  "keywords": [
+    "web-scraping",
+    "argentina",
+    "immigrants"
+  ],
   "engines": {
     "node": ">=10.0.0"
   },
