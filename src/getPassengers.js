@@ -1,10 +1,11 @@
 const axios = require('axios').default;
 const JSSoup = require('jssoup').default;
+// const fs = require('fs/promises');
 const getArguments = require('./getArguments');
 const readFile = require('./readFile');
 const writeFile = require('./writeFile');
 const sleep = require('./sleep');
-// const fs = require('fs/promises');
+const printProgressBar = require('./printProgressBar');
 
 // the main module is at the bottom
 
@@ -108,19 +109,17 @@ const fetchPassengers = async (arrival) => {
     const aux = await fetchPassengers(arrival);
 
     if (aux.length > 0) {
-      console.log(
-        `[${++progress}/${arrivals.length}] ${
-          arrival.date
-        }'s passengers fetched.`
-      );
       passengers = [...passengers, ...aux];
     } else {
       // save the arrival to retry later
       global.arrivalsErrors.push(arrival);
     }
 
+    printProgressBar(++progress, arrivals.length);
     await sleep(delay);
   }
+
+  console.log(`\n${passengers.length} passengers were fetched.`);
 
   // save results overwriting the previous file if this was a normal run
   // if this is a retry, send false in order to append the results

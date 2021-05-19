@@ -1,5 +1,6 @@
 const sql = require('mssql');
 const readFile = require('./readFile');
+const printProgressBar = require('./printProgressBar');
 const { database } = require('../config.json');
 
 const sqlConfig = {
@@ -27,8 +28,7 @@ const sqlConfig = {
           `'${passenger.birthPlace}', ${passenger.age})`
       );
 
-      if (++progress % 1000 === 0)
-        console.log(`${progress}/${passengers.length} completed`);
+      printProgressBar(++progress, passengers.length);
     }
 
     sql.close();
