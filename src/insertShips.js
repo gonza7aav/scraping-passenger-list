@@ -1,5 +1,6 @@
 const sql = require('mssql');
 const readFile = require('./readFile');
+const printProgressBar = require('./printProgressBar');
 const { database } = require('../config.json');
 
 const sqlConfig = {
@@ -25,8 +26,7 @@ const sqlConfig = {
           `VALUES (${ship.id}, '${ship.name}', '${ship.url}')`
       );
 
-      if (++progress % 100 === 0)
-        console.log(`${progress}/${ships.length} completed`);
+      printProgressBar(++progress, ships.length);
     }
 
     sql.close();

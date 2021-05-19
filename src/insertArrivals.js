@@ -1,5 +1,6 @@
 const sql = require('mssql');
 const readFile = require('./readFile');
+const printProgressBar = require('./printProgressBar');
 const { database } = require('../config.json');
 
 const sqlConfig = {
@@ -36,8 +37,7 @@ const fixDate = (date) => {
           `'${fixDate(arrival.date)}', '${arrival.url}')`
       );
 
-      if (++progress % 1000 === 0)
-        console.log(`${progress}/${arrivals.length} completed`);
+      printProgressBar(++progress, arrivals.length);
     }
 
     sql.close();
