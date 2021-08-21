@@ -4,17 +4,16 @@
     "es2021": true,
     "node": true
   },
-  "extends": ["airbnb-base", "prettier", "plugin:node/recommended"],
+  "extends": ["airbnb-base"],
   "parserOptions": {
     "ecmaVersion": 12
   },
   "rules": {
-    "no-restricted-syntax": "off",
-    "no-process-exit": "off",
-    "no-plusplus": "off",
+    "comma-dangle": "off",
+    "no-await-in-loop": "off",
     "no-console": "off",
-    "no-underscore-dangle": "off",
-    "no-param-reassign": "warn",
-    "no-await-in-loop": "off"
+    "no-restricted-syntax": "off",
+    "linebreak-style": "off",
+    "operator-linebreak": "after"
   }
 }
