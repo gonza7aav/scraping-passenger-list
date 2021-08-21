@@ -1,53 +1,37 @@
 {
   "name": "scraping-passenger-list",
-  "version": "1.0.0",
-  "description": "A bundle of web scraping script that harvest information about ships, arrivals and passengers.",
-  "homepage": "https://github.com/gonza7aav/scraping-passenger-list#readme",
-  "bugs": {
-    "url": "https://github.com/gonza7aav/scraping-passenger-list/issues"
-  },
+  "version": "2.0.0",
+  "private": true,
   "license": "MIT",
-  "author": {
-    "name": "Aguirre Gonzalo Adolfo",
-    "email": "gonza.a.aguirre@gmail.com",
-    "url": "https://github.com/gonza7aav"
-  },
+  "author": "Aguirre Gonzalo Adolfo <gonza.a.aguirre@gmail.com> (https://github.com/gonza7aav)",
+  "main": "index.js",
   "scripts": {
-    "get-ships": "node src/getShips.js",
-    "get-arrivals": "node src/getArrivals.js",
-    "get-passengers": "node src/getPassengers.js",
-    "retry-arrivals": "node src/getArrivals.js retry",
-    "retry-passengers": "node src/getPassengers.js retry",
-    "insert-ships": "node src/insertShips.js",
-    "insert-arrivals": "node src/insertArrivals.js",
-    "insert-passengers": "node src/insertPassengers.js"
+    "get-ships": "node src/index.js --action get --script Ships",
+    "get-arrivals": "node src/index.js --action get --script Arrivals",
+    "get-passengers": "node src/index.js --action get --script Passengers",
+    "init-database": "node src/initDatabase.js",
+    "insert-ships": "node src/index.js --action insert --script Ships",
+    "insert-arrivals": "node src/index.js --action insert --script Arrivals",
+    "insert-passengers": "node src/index.js --action insert --script Passengers",
+    "help": "node src/index.js --help"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/gonza7aav/scraping-passenger-list.git"
   },
-  "keywords": [
-    "web-scraping",
-    "argentina",
-    "immigrants"
-  ],
-  "engines": {
-    "node": ">=10.0.0"
-  },
   "dependencies": {
     "axios": "^0.21.1",
-    "fs": "^0.0.1-security",
+    "cli-progress": "^3.9.0",
+    "commander": "^8.1.0",
+    "dotenv": "^10.0.0",
+    "fast-csv": "^4.3.6",
     "jssoup": "^0.0.12",
-    "mssql": "^7.1.0"
+    "mysql": "^2.18.1",
+    "wait": "^0.4.2"
   },
   "devDependencies": {
-    "eslint": "^7.26.0",
+    "eslint": "^7.30.0",
     "eslint-config-airbnb-base": "^14.2.1",
-    "eslint-config-node": "^4.1.0",
-    "eslint-config-prettier": "^8.3.0",
-    "eslint-plugin-import": "^2.23.2",
-    "eslint-plugin-node": "^11.1.0",
-    "eslint-plugin-prettier": "^3.4.0",
-    "prettier": "^2.3.0"
+    "eslint-plugin-import": "^2.23.4"
   }
 }

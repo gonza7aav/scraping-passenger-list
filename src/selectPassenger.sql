@@ -1,14 +1,13 @@
-USE ScrapingPassengerList
-GO
-
 SELECT
-  passengers.name AS "Passenger",
-  passengers.birthPlace AS "Birth Place",
-  passengers.age AS "Age",
-  ships.name AS "Ship",
-  arrivals.date AS "Arrival"
-FROM passengers
-JOIN arrivals ON passengers.arrival = arrivals.id AND passengers.ship = arrivals.ship
-JOIN ships ON arrivals.ship = ships.id
+  p.`name` AS "Passenger",
+  p.`birthPlace` AS "Birth Place",
+  p.`age` AS "Age",
+  s.`name` AS "Ship",
+  a.`date` AS "Arrival"
+FROM `scraping-passenger-list`.`passengers` AS p
+JOIN `scraping-passenger-list`.`arrivals` AS a
+  ON p.`arrival` = a.`id` AND p.`ship` = a.`ship`
+JOIN `scraping-passenger-list`.`ships` AS s
+  ON a.`ship` = s.`id`
 -- WHERE
-ORDER BY arrivals.date, passengers.name ASC
+ORDER BY a.`date`, p.`name` ASC
