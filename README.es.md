@@ -14,18 +14,6 @@ Un conjunto de programas de web scraping para recolectar información sobre barc
 
 Los archivos de resultados pueden ser importados a una base de datos para ser consultados. Estos archivos están disponibles en [Releases](https://github.com/gonza7aav/scraping-passenger-list/releases).
 
-## 📑 Tabla de Contenido
-
-- [💡 Motivación](#-Motivación)
-- [🚧 Requisitos](#-Requisitos)
-- [🛠️ Instalación](#-Instalación)
-- [🚀 Ejecución](#-Ejecución)
-  - [🔍 Obteniendo información](#-Obteniendo-información)
-    - [🚩 Opciones](#-Opciones)
-  - [♻️ Reintentando los fallidos](#-Reintentando-los-fallidos)
-  - [🔣 Consultando la base de datos](#-Consultando-la-base-de-datos)
-- [📝 Licencia](#-Licencia)
-
 ## 💡 Motivación
 
 La familia de mi madre emigró principalmente de _República Checa_. Mientras los buscaba entre listas de pasajeros, se presentaron algunos problemas. El primero fue el apellido. Todavía no entiendo muy bien como es, pero a las mujeres se les "cambia" el apellido agregándole "ova". Por ejemplo, "Vonka" es "Vonkova". El segundo fue como eran registrados cuando llegaban a _Argentina_. Cuando los nombres eran algo complejos, los cambiaban por otros similares. Por ejemplo, "Jan" a "Juan" o "František" a "Francisco".

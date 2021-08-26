@@ -14,18 +14,6 @@ A bundle of web scraping scripts that harvest information about ships, arrivals 
 
 Result files can be imported into a SQL database for querying. These files are available in [Releases](https://github.com/gonza7aav/scraping-passenger-list/releases).
 
-## 📑 Table of Contents
-
-- [💡 Motivation](#-Motivation)
-- [🚧 Prerequisites](#-Prerequisites)
-- [🛠️ Install](#-Install)
-- [🚀 Usage](#-Usage)
-  - [🔍 Getting some information](#-Getting-some-information)
-    - [🚩 Flags](#-Flags)
-  - [♻️ Retrying those which failed](#-Retrying-those-which-failed)
-  - [🔣 Querying the database](#-Querying-the-database)
-- [📝 License](#-License)
-
 ## 💡 Motivation
 
 My mother's family emigrated mainly from _Czech Republic_. While looking for them in some passenger lists, a couple of problems appeared. The first was the last name. I still don't quite understand how it works, but women have their last name "changed" by adding "ova". For example, "Vonka" is "Vonkova". The second was how they were registered when they arrived in _Argentina_. When the names were somewhat complex, they were changed to a similar one from here. For example, "Jan" to "Juan" or "František" to "Francisco".
