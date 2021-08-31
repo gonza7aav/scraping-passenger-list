@@ -6,7 +6,7 @@
 ![Tamaño del repositorio de GitHub](https://img.shields.io/github/repo-size/gonza7aav/scraping-passenger-list?label=tamaño&color=informational)
 ![Licencia del repositorio](https://img.shields.io/github/license/gonza7aav/scraping-passenger-list?label=licencia&color=informational)
 
-[Inglés](README.en.md)
+[![Read me in English](https://img.shields.io/badge/Read%20me%20in-English-brightgreen)](README.en.md)
 
 </div>
 
@@ -28,21 +28,31 @@ Si vas a crear la base de datos para consultarla, también necesitas:
 
 - _[MySQL](https://www.mysql.com/)_
 
-Puedes importar los archivos `.csv` a tu servicio de bases de datos preferido. Pero este código solo cubre _MySQL_.
+Puedes importar los archivos `.csv` a tu servicio preferido de bases de datos. Pero este código solo cubre _MySQL_.
 
 ## 🛠️ Instalación
 
-1. Descarga este repositorio
+1. Descargar este repositorio
 
-2. Instala las dependencias
+2. Instalar las dependencias
 
    ```console
    npm install
    ```
 
-3. Rellena el archivo `.env.sample` y renómbralo como `.env`
+3. Rellenar el archivo `.env.sample` y renómbralo como `.env`
 
 ## 🚀 Ejecución
+
+Si no quieres molestarte por obtener la información:
+
+1. Crear una carpeta `results` dentro del proyecto
+
+2. Descargar la [última versión de los datos](https://github.com/gonza7aav/scraping-passenger-list/releases)
+
+3. Descomprimir el archivo descargado dentro de `results`
+
+4. Salta la sección "🔍 Obteniendo información"
 
 ### 🔍 Obteniendo información
 
@@ -88,7 +98,7 @@ Añadí estas para modificar el comportamiento sin tener que cambiar archivos de
   npm run get-arrivals -- [-l | --limit <número>]
   ```
 
-  Cuando estableces un limite, algunas peticiones o inserciones pueden excederlo. Entonces, ellas serán guardadas en un archivo `.error.csv` para poder ser reanudadas luego. El valor por defecto es 500. Con 0 no ponemos límite.
+  Cuando estableces un límite, algunas peticiones o inserciones pueden excederlo. Entonces, ellas serán guardadas en un archivo `.error.csv` para poder ser reanudadas luego. El valor por defecto es 500. Con 0 no ponemos límite.
 
 - Cambiar el retraso
 
@@ -140,7 +150,7 @@ Una vez creada, podremos insertar los archivos de resultados con:
   npm run insert-passengers -- [opciones]
   ```
 
-Para cuando escribí esto, he recolectado casi 1.2 millones de pasajeros. Insertar esta cantidad tomará su tiempo... enserio, muchos minutos. Asi que ve a despejarte y tómate un café.
+Para cuando escribí esto, he recolectado casi 1.2 millones de pasajeros. Insertar esta cantidad tomará su tiempo... en serio, muchos minutos. Así que ve a despejarte y tómate un café.
 
 Una vez finalizado, vas a poder consultar la base de datos `scraping-passenger-list`. No tienes que preocuparte por las uniones de tablas, dejé una plantilla llamada [`selectPassenger.sql`](src/selectPassenger.sql).
 

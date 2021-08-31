@@ -6,7 +6,7 @@
 ![GitHub repository size](https://img.shields.io/github/repo-size/gonza7aav/scraping-passenger-list?label=size&color=informational)
 ![Repository license](https://img.shields.io/github/license/gonza7aav/scraping-passenger-list?label=license&color=informational)
 
-[Spanish](README.es.md)
+[![Léeme en Español](https://img.shields.io/badge/Léeme%20en-Español-brightgreen)](README.es.md)
 
 </div>
 
@@ -28,7 +28,7 @@ If you are going to create the database and query it, you also need:
 
 - _[MySQL](https://www.mysql.com/)_
 
-You can import the `.csv` files to your preferred database service. But this code only cover _MySQL_.
+You can import the `.csv` files to your preferred database service. But this code only covers _MySQL_.
 
 ## 🛠️ Install
 
@@ -44,6 +44,16 @@ You can import the `.csv` files to your preferred database service. But this cod
 
 ## 🚀 Usage
 
+If you don't want to bother yourself about getting the information:
+
+1. Create a `results` folder inside the project
+
+2. Download the [latest data release](https://github.com/gonza7aav/scraping-passenger-list/releases)
+
+3. Unzip the downloaded file inside `results`
+
+4. Skip the "🔍 Getting some information" section
+
 ### 🔍 Getting some information
 
 These are the scraping scripts you can run:
@@ -54,7 +64,7 @@ These are the scraping scripts you can run:
   npm run get-ships
   ```
 
-  Search for available ships in the page. Then, they will be written in `ships.csv`.
+  Search for available ships on the page. Then, they will be written in `ships.csv`.
 
 - Get arrivals
 
@@ -64,7 +74,7 @@ These are the scraping scripts you can run:
 
   Look for the arrivals of every ship in `ships.csv`. So, you must have run `get-ships` before.
 
-  Then, the results will be saved in `arrivals.csv`. If any request failed over the network or due to a limit, it will be in `ships.error.csv` to retry them later.
+  Then, the results will be saved in `arrivals.csv`. If any request failed over the network or is due to a limit, it will be in `ships.error.csv` to retry them later.
 
 - Get passengers
 
@@ -74,7 +84,7 @@ These are the scraping scripts you can run:
 
   Get the passenger list of every arrival in `arrivals.csv`. So, you have to run the `get-arrivals` command before.
 
-  After it, all passengers could be found in `passengers.csv`. If any request failed over the network or due to a limit, it will be in `arrivals.error.csv` to retry them later.
+  After it, all passengers could be found in `passengers.csv`. If any request failed over the network or is due to a limit, it will be in `arrivals.error.csv` to retry them later.
 
 #### 🚩 Flags
 
@@ -88,7 +98,7 @@ I added these to modify the behaviour without changing a config file or some con
   npm run get-arrivals -- [-l | --limit <number>]
   ```
 
-  When you set a limit, some request or insert may exceed it. So, it will be saved in a `.error.csv` file in order to be resumed later. The default value is 500. With 0 we set no limit.
+  When you set a limit, some requests or inserts may exceed it. So, it will be saved in a `.error.csv` file to be resumed later. The default value is 500. With 0 we set no limit.
 
 - Change the delay
 
@@ -98,11 +108,11 @@ I added these to modify the behaviour without changing a config file or some con
   npm run get-passengers -- [-d | --delay <number>]
   ```
 
-  The default value is 200ms. **It's not recommended to go below that** without knowing how many request the server could handle/allows. I am not responsible for any ban for making too many requests in a very short time.
+  The default value is 200ms. **It's not recommended to go below that** without knowing how many requests the server could handle/allows. I am not responsible for any ban for making too many requests in a very short time.
 
 ### ♻️ Retrying those which failed
 
-If you encountered a failure or setted a limit, then you have a `.error.csv` file and here is what you should do to retry those.
+If you encountered a failure or set a limit, then you have a `.error.csv` file and here is what you should do to retry those.
 
 Example: If you want to retry getting the arrivals of ships that failed
 
@@ -110,7 +120,7 @@ Example: If you want to retry getting the arrivals of ships that failed
 npm run get-arrivals -- [-r | --retry]
 ```
 
-This search for the arrivals of ships in `ships.error.csv`. The results will appended to `arrivals.csv`. Same logic for others commands.
+This search for the arrivals of ships in `ships.error.csv`. The results will be appended to `arrivals.csv`. Same logic for other commands.
 
 ### 🔣 Querying the database
 
